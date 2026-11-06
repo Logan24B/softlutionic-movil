@@ -1,0 +1,16 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:layout_marginBottom="4dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="@color/login_surface" app:cardCornerRadius="20dp" app:strokeWidth="1dp" app:strokeColor="@color/login_accent" app:rippleColor="@color/login_cyan">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+            <TextView android:id="@+id/avatar" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/client_avatar" android:gravity="center" android:textColor="@color/login_cyan" android:textSize="18sp" android:textStyle="bold" android:importantForAccessibility="no"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                <TextView android:id="@+id/name" style="@style/TextAppearance.Softlutionic.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp"/>
+                <TextView android:id="@+id/department" style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:id="@+id/phone" style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:drawableStart="@drawable/ic_client_phone" android:drawablePadding="8dp"/>
+        <TextView android:id="@+id/email" style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:drawableStart="@drawable/ic_client_mail" android:drawablePadding="8dp"/>
+        <TextView android:id="@+id/idCard" style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp"/>
+        <TextView android:id="@+id/state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end" android:layout_marginTop="10dp" android:paddingHorizontal="12dp" android:paddingVertical="6dp" android:background="@drawable/login_status" android:textSize="12sp" android:textStyle="bold"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

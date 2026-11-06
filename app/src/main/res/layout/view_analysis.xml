@@ -1,0 +1,19 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+ android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@drawable/login_background" android:theme="@style/ThemeOverlay.Softlutionic.Login">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+  <TextView style="@style/TextAppearance.Softlutionic.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/analysis_title" android:textSize="28sp" android:accessibilityHeading="true"/>
+  <TextView style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/analysis_subtitle"/>
+  <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" app:cardCornerRadius="18dp" app:cardBackgroundColor="@color/login_surface" app:strokeColor="@color/login_stroke" app:strokeWidth="1dp">
+   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="vertical">
+    <TextView style="@style/TextAppearance.Softlutionic.Body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="10dp" android:background="@drawable/login_status" android:textColor="@color/login_cyan" android:text="@string/analysis_development"/>
+    <TextView style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/analysis_description"/>
+    <TextView style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/analysis_next_phase"/>
+   </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+  <TextView style="@style/TextAppearance.Softlutionic.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_marginBottom="12dp" android:text="@string/analysis_indicators" android:accessibilityHeading="true"/>
+  <LinearLayout android:id="@+id/indicators" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+  <TextView style="@style/TextAppearance.Softlutionic.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/analysis_soon" android:accessibilityHeading="true"/>
+  <TextView style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/analysis_future"/>
+  <com.google.android.material.button.MaterialButton android:id="@+id/back" style="@style/Widget.Softlutionic.ClientAction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/analysis_back"/>
+ </LinearLayout>
+</ScrollView>

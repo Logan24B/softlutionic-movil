@@ -1,0 +1,8 @@
+allprojects { project ->
+    project.plugins.withId('com.android.application') {
+        project.androidComponents.finalizeDsl { android ->
+            android.signingConfigs.getByName('debug').storeFile = new File('C:/Users/Logan/.android/debug.keystore')
+            android.defaultConfig.testInstrumentationRunner = project.findProperty('consultationRunner') ?: 'com.softlutionic.mobile.ConsultationContractInstrumentation'
+        }
+    }
+}

@@ -1,0 +1,9 @@
+// Optional isolated emulator preview: leaves the installed real app and its session intact.
+allprojects { project ->
+    project.plugins.withId('com.android.application') {
+        project.androidComponents.finalizeDsl { android ->
+            android.buildTypes.getByName('debug').applicationIdSuffix = '.clientpreview'
+            android.defaultConfig.testInstrumentationRunner = 'com.softlutionic.mobile.ClientsSmokeInstrumentation'
+        }
+    }
+}

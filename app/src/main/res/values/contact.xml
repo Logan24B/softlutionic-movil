@@ -1,0 +1,12 @@
+<resources>
+ <string name="module_contact">Contacto</string>
+ <string name="contact_title">SOLICITUDES DE CONTACTO</string>
+ <string name="contact_subtitle">Solicitudes recibidas desde el formulario Contáctenos.</string>
+ <string name="contact_search">Buscar nombre, correo, asunto o mensaje…</string>
+ <string name="contact_loading">Cargando solicitudes…</string>
+ <string name="contact_empty">No hay solicitudes de contacto por el momento.</string>
+ <string name="contact_error">No se pudieron cargar las solicitudes.</string>
+ <string name="contact_no_matches">No hay coincidencias. Revisa la búsqueda.</string>
+ <string name="contact_retry">Reintentar</string>
+ <string name="contact_detail">DETALLE DE SOLICITUD</string>
+</resources>

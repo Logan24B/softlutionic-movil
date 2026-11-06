@@ -1,0 +1,4 @@
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.Softlutionic.LoginInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+    <com.google.android.material.textfield.TextInputEditText android:id="@+id/input" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:inputType="text" android:textColor="@color/login_text"/>
+</com.google.android.material.textfield.TextInputLayout>

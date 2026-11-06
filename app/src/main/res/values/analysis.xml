@@ -1,0 +1,18 @@
+<resources>
+ <string name="module_analysis">Análisis</string>
+ <string name="analysis_title">ANÁLISIS</string>
+ <string name="analysis_subtitle">Indicadores y análisis para la toma de decisiones.</string>
+ <string name="analysis_development">EN DESARROLLO</string>
+ <string name="analysis_description">Este módulo integrará la información consolidada del Data Warehouse de Softlutionic para presentar indicadores, tendencias y comparativos gerenciales.</string>
+ <string name="analysis_next_phase">La integración con DW_Sofactur y la API analítica se encuentra prevista para una siguiente fase de desarrollo.</string>
+ <string name="analysis_indicators">INDICADORES PREVISTOS</string>
+ <string name="analysis_soon">PRÓXIMAMENTE</string>
+ <string name="analysis_future">Resumen ejecutivo · Tendencias temporales · Ranking de servicios · Ranking de clientes · Cobranza · Mora · Satisfacción · Esperado vs. satisfacción.</string>
+ <string name="analysis_back">Volver</string>
+ <string-array name="analysis_indicator_titles">
+  <item>FACTURACIÓN</item><item>RECAUDACIÓN</item><item>SALDO PENDIENTE</item><item>MORA</item><item>VENTAS</item><item>SERVICIOS</item><item>CLIENTES</item><item>TENDENCIAS</item><item>SATISFACCIÓN</item>
+ </string-array>
+ <string-array name="analysis_indicator_descriptions">
+  <item>Evolución de los ingresos facturados.</item><item>Comparación entre facturación y pagos recibidos.</item><item>Seguimiento de la cartera pendiente.</item><item>Análisis de atrasos y comportamiento de pago.</item><item>Comportamiento comercial por periodo.</item><item>Rendimiento y participación por servicio.</item><item>Segmentación y comportamiento de clientes.</item><item>Análisis por día, mes, trimestre y año.</item><item>Comparativo futuro entre desempeño y percepción del cliente.</item>
+ </string-array>
+</resources>

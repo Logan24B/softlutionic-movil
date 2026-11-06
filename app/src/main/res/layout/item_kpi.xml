@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/login_card" android:padding="16dp" android:layout_margin="4dp" android:minHeight="132dp">
+ <ImageView android:id="@+id/icon" android:layout_width="24dp" android:layout_height="24dp" android:importantForAccessibility="no"/>
+ <TextView android:id="@+id/value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="24sp" android:textColor="@color/login_text" android:fontFamily="sans-serif-medium"/>
+ <TextView android:id="@+id/label" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="13sp" android:textColor="@color/login_muted"/>
+</LinearLayout>

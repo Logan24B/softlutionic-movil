@@ -4,3 +4,4 @@
 /**/build/
 *.iml
 /.idea/
+/app/google-services.json

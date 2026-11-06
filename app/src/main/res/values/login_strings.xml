@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_brand">Softlutionic</string>
+    <string name="login_eyebrow">INTELIGENCIA FINANCIERA</string>
+    <string name="login_title">Tu negocio.\nUna visión más clara.</string>
+    <string name="login_subtitle">Finanzas y gestión empresarial conectadas.</string>
+    <string name="login_heading">Accede a tu espacio</string>
+    <string name="login_hint">El control de tu operación comienza aquí.</string>
+    <string name="login_user">Usuario o correo</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_action">Iniciar sesión</string>
+    <string name="login_loading">Conectando…</string>
+    <string name="login_footer">Control financiero · Gestión · Facturación</string>
+    <string name="login_user_required">Ingrese su usuario</string>
+    <string name="login_password_required">Ingrese su contraseña</string>
+</resources>

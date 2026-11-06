@@ -1,0 +1,7 @@
+allprojects { project ->
+    project.plugins.withId('com.android.application') {
+        project.androidComponents.finalizeDsl { android ->
+            android.defaultConfig.testInstrumentationRunner = project.findProperty('usersRunner') ?: 'com.softlutionic.mobile.UsersContractInstrumentation'
+        }
+    }
+}

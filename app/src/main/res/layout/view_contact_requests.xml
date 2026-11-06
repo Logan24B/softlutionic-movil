@@ -1,0 +1,10 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp" android:background="@drawable/login_background" android:theme="@style/ThemeOverlay.Softlutionic.Login">
+ <TextView style="@style/TextAppearance.Softlutionic.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/contact_title" android:textSize="26sp" android:accessibilityHeading="true"/>
+ <TextView style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/contact_subtitle"/>
+ <include android:id="@+id/search" layout="@layout/client_input"/>
+ <TextView android:id="@+id/summary" style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"/>
+ <TextView android:id="@+id/status" style="@style/TextAppearance.Softlutionic.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="10dp" android:paddingBottom="10dp" android:accessibilityLiveRegion="polite"/>
+ <com.google.android.material.button.MaterialButton android:id="@+id/retry" style="@style/Widget.Softlutionic.ClientAction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/contact_retry" android:visibility="gone"/>
+ <androidx.recyclerview.widget.RecyclerView android:id="@+id/requests" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingTop="12dp"/>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeOverlay.Softlutionic.Login" parent="ThemeOverlay.MaterialComponents.Dark">
+        <item name="colorPrimary">@color/login_accent</item>
+        <item name="colorOnSurface">@color/login_text</item>
+        <item name="colorError">@color/login_error</item>
+        <item name="android:textColorHint">@color/login_muted</item>
+    </style>
+    <style name="Widget.Softlutionic.LoginInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/login_surface</item>
+        <item name="boxStrokeColor">@color/login_stroke</item>
+        <item name="boxStrokeErrorColor">@color/login_error</item>
+        <item name="errorTextColor">@color/login_error</item>
+        <item name="errorIconTint">@color/login_error</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="hintTextColor">@color/login_accent</item>
+        <item name="startIconTint">@color/login_muted</item>
+        <item name="endIconTint">@color/login_muted</item>
+    </style>
+</resources>

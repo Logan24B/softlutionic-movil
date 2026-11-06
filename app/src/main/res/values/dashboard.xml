@@ -1,0 +1,36 @@
+<resources>
+ <string name="billing_indicators">Indicadores de facturación</string>
+ <color name="dashboard_green">#76DFC0</color><color name="dashboard_amber">#F4C47A</color>
+ <string name="dashboard_title">Resumen financiero</string>
+ <string name="dashboard_subtitle">Monitorea facturación, cobros y cartera en tiempo real.</string>
+ <string name="billing_tab">Facturación general</string><string name="commercial_tab">Clientes y servicios</string>
+ <string name="filter_period">Filtrar período</string><string name="period_value">%1$s → %2$s</string>
+ <string name="filter_hint">El período se aplica a facturación, cobros e ingresos. Clientes, contratos y sus distribuciones son totales generales.</string>
+ <string name="apply">Aplicar</string><string name="clear_filter">Limpiar</string><string name="cancel">Cancelar</string>
+ <string name="modules_title">Módulos</string><string name="modules_subtitle">Gestión empresarial</string><string name="logout">Cerrar sesión</string>
+ <string name="refresh">Actualizar</string><string name="create">Crear</string><string name="retry">Reintentar</string>
+ <string name="dashboard_empty">Aún no hay datos disponibles. Actualiza para consultar el resumen.</string>
+ <string name="no_series">Sin datos disponibles para este período.</string>
+ <string name="no_invoices">Aún no hay facturas para mostrar.</string><string name="recent_invoices">Facturas recientes</string><string name="see_all">Ver todas</string>
+ <string name="invoice_code">Factura #%1$s</string>
+ <string name="operating_metrics">Indicadores operativos</string>
+ <string name="total_billed">Total facturado</string><string name="total_paid">Total pagado</string><string name="balance_due">Saldo pendiente</string><string name="total_late">Total mora</string>
+ <string name="client_count">Cantidad de clientes</string><string name="contract_count">Cantidad de contratos</string><string name="average_ticket">Ticket promedio</string><string name="service_income">Ingresos por servicio</string>
+ <string name="monthly_billed">Facturado por mes</string><string name="invoice_states">Facturas por estado</string><string name="contract_types">Contratos por tipo</string><string name="client_departments">Clientes por departamento</string>
+ <string name="service_scope">Ingresos correspondientes a los servicios incluidos por el backend (hasta 10).</string>
+ <string name="sync_busy">Actualizando…</string><string name="sync_ok">Actualizado</string>
+ <string name="sync_offline">Sin conexión · mostrando datos guardados</string><string name="sync_error">Error de sincronización · %1$s</string>
+ <string name="data_error">No se pudieron interpretar los datos. Intenta actualizar.</string>
+ <string name="no_modules">No hay módulos disponibles para esta cuenta.</string>
+ <string name="module_dashboard">Dashboard</string><string name="module_clients">Clientes</string><string name="module_departments">Departamentos</string><string name="module_services">Servicios</string><string name="module_users">Usuarios</string><string name="module_contracts">Contratos</string><string name="module_contract_types">Tipos de contrato</string><string name="module_invoices">Facturas</string><string name="module_invoice_states">Estados de factura</string><string name="module_payments">Pagos</string><string name="module_late">Moras</string><string name="module_notifications">Notificaciones</string><string name="module_audit">Auditoría</string>
+ <style name="TextAppearance.Softlutionic.Tab" parent="TextAppearance.MaterialComponents.Button"><item name="android:textAllCaps">false</item><item name="android:textSize">13sp</item></style>
+ <style name="ThemeOverlay.Softlutionic.Sheet" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+  <item name="colorSurface">@color/login_bg</item><item name="colorOnSurface">@color/login_text</item><item name="colorPrimary">@color/login_accent</item><item name="android:textColorPrimary">@color/login_text</item><item name="bottomSheetStyle">@style/Widget.Softlutionic.Sheet</item>
+ </style>
+ <style name="Widget.Softlutionic.Sheet" parent="Widget.MaterialComponents.BottomSheet.Modal"><item name="backgroundTint">@color/login_bg</item></style>
+ <style name="ThemeOverlay.Softlutionic.Calendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+  <item name="colorSurface">@color/login_surface</item><item name="colorOnSurface">@color/login_text</item><item name="colorPrimary">@color/login_accent</item><item name="colorOnPrimary">@color/login_bg</item><item name="android:textColorPrimary">@color/login_text</item><item name="android:textColorSecondary">@color/login_muted</item><item name="android:colorBackground">@color/login_bg</item>
+ </style>
+ <style name="TextAppearance.Softlutionic.Section" parent="TextAppearance.MaterialComponents.Headline6"><item name="android:textColor">@color/login_text</item><item name="android:textSize">20sp</item><item name="android:fontFamily">sans-serif-medium</item></style>
+ <style name="TextAppearance.Softlutionic.Body" parent="TextAppearance.MaterialComponents.Body2"><item name="android:textColor">@color/login_muted</item><item name="android:textSize">14sp</item></style>
+<string name="select_dates">Desde / Hasta</string><string name="no_records">No hay registros disponibles.</string></resources>

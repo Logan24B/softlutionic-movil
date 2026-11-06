@@ -1,0 +1,11 @@
+<resources>
+    <style name="ThemeOverlay.Softlutionic.InvoiceTimePicker" parent="ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="colorSurface">@color/login_surface</item>
+        <item name="colorOnSurface">@color/login_text</item>
+        <item name="colorPrimary">@color/login_accent</item>
+        <item name="colorOnPrimary">@color/login_bg</item>
+        <item name="android:textColorPrimary">@color/login_text</item>
+        <item name="android:textColorSecondary">@color/login_muted</item>
+        <item name="android:colorBackground">@color/login_bg</item>
+    </style>
+</resources>

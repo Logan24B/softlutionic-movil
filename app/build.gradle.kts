@@ -1,4 +1,4 @@
-plugins { id("com.android.application"); id("com.google.devtools.ksp") }
+plugins { id("com.android.application"); id("com.google.devtools.ksp"); id("com.google.gms.google-services") }
 val apiUrl = providers.gradleProperty("SOFTLUTIONIC_BASE_URL").getOrElse("https://softlutionic-sistema-eqh8cjdbbre4fndd.westus-01.azurewebsites.net/")
 require(apiUrl.startsWith("https://") && apiUrl.endsWith("/")) { "BASE_URL debe usar HTTPS y terminar en /" }
 android {
@@ -10,6 +10,7 @@ android {
   targetSdk = 34
   versionCode = 1
   versionName = "1.0.0"
+  testInstrumentationRunner = "com.softlutionic.mobile.DashboardSmokeInstrumentation"
   buildConfigField("String", "BASE_URL", "\"$apiUrl\"")
  }
  buildFeatures { viewBinding = true; buildConfig = true }
@@ -17,6 +18,8 @@ android {
 }
 ksp { arg("room.schemaLocation", "$projectDir/schemas") }
 dependencies {
+ implementation(platform("com.google.firebase:firebase-bom:35.1.0"))
+ implementation("com.google.firebase:firebase-messaging")
  implementation("androidx.core:core-ktx:1.13.1")
  implementation("androidx.appcompat:appcompat:1.7.0")
  implementation("com.google.android.material:material:1.12.0")

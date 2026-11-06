@@ -1,0 +1,10 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp" android:background="@color/login_bg" android:theme="@style/ThemeOverlay.Softlutionic.Login">
+    <TextView style="@style/TextAppearance.Softlutionic.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/services_detail_title" android:accessibilityHeading="true"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:id="@+id/content" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp"/>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/progress" android:layout_width="match_parent" android:layout_height="wrap_content" android:indeterminate="true" android:visibility="gone"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/edit" style="@style/Widget.Softlutionic.ClientAction" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/services_edit"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/delete" style="@style/Widget.Softlutionic.ClientSecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/services_delete" android:textColor="@color/login_error"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/close" style="@style/Widget.Softlutionic.ClientSecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/services_close"/>
+</LinearLayout>

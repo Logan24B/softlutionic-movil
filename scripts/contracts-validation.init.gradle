@@ -1,0 +1,9 @@
+// Use the existing local debug key so installing preserves the emulator session.
+allprojects { project ->
+    project.plugins.withId('com.android.application') {
+        project.androidComponents.finalizeDsl { android ->
+            android.signingConfigs.getByName('debug').storeFile = new File(System.getProperty('user.home'), '.android/debug.keystore')
+            android.defaultConfig.testInstrumentationRunner = project.findProperty('contractsRunner') ?: 'com.softlutionic.mobile.ContractsContractInstrumentation'
+        }
+    }
+}

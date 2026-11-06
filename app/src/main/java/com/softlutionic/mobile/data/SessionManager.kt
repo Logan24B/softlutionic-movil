@@ -24,6 +24,17 @@ class SessionManager(context: Context) {
  }.getOrNull()
  val access get() = read("access")
  val refresh get() = read("refresh")
+ val pushToken get() = read("push_token")
+ val pushUserId get() = read("push_user")
+ @Synchronized fun clearPush() { prefs.edit().remove("push_token").remove("push_user").commit() }
+ @Synchronized fun savePush(token: String,userId: String) {
+  val edit=prefs.edit()
+  mapOf("push_token" to token,"push_user" to userId).forEach { (name,value) ->
+   val cipher=Cipher.getInstance("AES/GCM/NoPadding").apply { init(Cipher.ENCRYPT_MODE,key()) }
+   edit.putString(name,Base64.encodeToString(cipher.iv+cipher.doFinal(value.toByteArray(Charsets.UTF_8)),Base64.NO_WRAP))
+  }
+  edit.commit()
+ }
  @Synchronized fun save(access: String, refresh: String) {
   val edit = prefs.edit()
   mapOf("access" to access, "refresh" to refresh).forEach { (name,value) ->

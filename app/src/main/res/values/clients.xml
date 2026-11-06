@@ -1,0 +1,96 @@
+<resources>
+    <string name="clients_title">CLIENTES</string>
+    <string name="clients_subtitle">Administra la información y estado de tus clientes.</string>
+    <string name="clients_search">Buscar clientes…</string>
+    <string name="clients_search_help">Nombre, apellido, cédula, teléfono o correo</string>
+    <string name="clients_filters">Filtros</string>
+    <string name="clients_filter_active">Filtros activos</string>
+    <string name="clients_new">+ Nuevo cliente</string>
+    <string name="clients_new_title">Nuevo cliente</string>
+    <string name="clients_new_subtitle">Completa la información necesaria para registrar al cliente.</string>
+    <string name="clients_edit_title">Editar cliente</string>
+    <string name="clients_edit_subtitle">Actualiza sus datos y guarda los cambios.</string>
+    <string name="clients_save">Guardar cliente</string>
+    <string name="clients_saving">Guardando…</string>
+    <string name="clients_created">Cliente registrado correctamente</string>
+    <string name="clients_updated">Cliente actualizado correctamente</string>
+    <string name="clients_deleted">Cliente eliminado correctamente</string>
+    <string name="clients_edit">Editar</string>
+    <string name="clients_delete">Eliminar</string>
+    <string name="clients_close">Cerrar</string>
+    <string name="clients_delete_title">¿Eliminar cliente?</string>
+    <string name="clients_delete_message">Esta acción no se puede deshacer.</string>
+    <string name="clients_delete_related">No se puede eliminar este cliente porque tiene registros relacionados.</string>
+    <string name="clients_duplicate">Ya existe un cliente con estos datos. Revisa la cédula, el teléfono y el correo.</string>
+    <string name="clients_invalid">Revisa los campos indicados e intenta nuevamente.</string>
+    <string name="clients_server_error">No se pudo completar la operación. Intenta nuevamente.</string>
+    <string name="clients_offline_error">Sin conexión. Conservamos los datos del formulario; vuelve a intentar.</string>
+    <string name="clients_forbidden">No tienes permiso para realizar esta operación.</string>
+    <string name="clients_session_expired">La sesión venció. Inicia sesión nuevamente.</string>
+    <string name="clients_empty_title">No hay clientes registrados</string>
+    <string name="clients_empty_body">Agrega tu primer cliente para comenzar.</string>
+    <string name="clients_no_matches">No encontramos clientes</string>
+    <string name="clients_no_matches_body">Prueba otra búsqueda o limpia los filtros.</string>
+    <string name="clients_loading">Cargando clientes…</string>
+    <string name="clients_count">%1$d de %2$d clientes</string>
+    <string name="clients_personal">Información personal</string>
+    <string name="clients_contact">Contacto</string>
+    <string name="clients_location">Ubicación</string>
+    <string name="clients_configuration">Configuración</string>
+    <string name="clients_system">Información del sistema</string>
+    <string name="clients_name">Nombre</string>
+    <string name="clients_surname">Apellido</string>
+    <string name="clients_id_card">Cédula</string>
+    <string name="clients_phone">Teléfono</string>
+    <string name="clients_email">Correo</string>
+    <string name="clients_address">Dirección</string>
+    <string name="clients_department">Departamento</string>
+    <string name="clients_state">Estado</string>
+    <string name="clients_id">ID</string>
+    <string name="clients_registered_date">Fecha de registro</string>
+    <string name="clients_registered_time">Hora de registro</string>
+    <string name="clients_active">ACTIVO</string>
+    <string name="clients_inactive">INACTIVO</string>
+    <string name="clients_unknown_state">Estado no disponible</string>
+    <string name="clients_active_switch">Cliente activo</string>
+    <string name="clients_all">Todos</string>
+    <string name="clients_active_filter">Activos</string>
+    <string name="clients_inactive_filter">Inactivos</string>
+    <string name="clients_all_departments">Todos los departamentos</string>
+    <string name="clients_department_missing">Departamento no disponible</string>
+    <string name="clients_department_retry">No se pudo cargar el catálogo de departamentos. Actualiza para reintentar.</string>
+    <string name="clients_departments_loading">Cargando departamentos…</string>
+    <string name="clients_no_data">No registrado</string>
+    <string name="clients_no_name">Cliente sin nombre</string>
+    <string name="clients_select_department">Selecciona un departamento</string>
+    <string name="clients_required">Completa este campo</string>
+    <string name="clients_email_invalid">Ingresa un correo válido</string>
+    <string name="clients_phone_invalid">Usa 8 dígitos o el formato +505 0000 0000</string>
+    <string name="clients_max_length">Usa como máximo %1$d caracteres</string>
+    <string name="clients_phone_help">8 dígitos o +505 0000 0000</string>
+    <string name="clients_required_label">%1$s *</string>
+    <string name="clients_unavailable_form">El schema no contiene campos editables de clientes. Actualiza los módulos.</string>
+    <string name="clients_clear">Limpiar filtros</string>
+    <string name="clients_detail_title">Detalle del cliente</string>
+    <style name="Widget.Softlutionic.ClientAction" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="backgroundTint">@color/login_accent</item>
+        <item name="android:textColor">@color/login_bg</item>
+    </style>
+    <style name="Widget.Softlutionic.ClientSecondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:textColor">@color/login_cyan</item>
+        <item name="strokeColor">@color/login_cyan</item>
+    </style>
+    <style name="ThemeOverlay.Softlutionic.ClientSheet" parent="ThemeOverlay.Softlutionic.Sheet">
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">@color/login_bg</item>
+        <item name="colorError">@color/login_error</item>
+        <item name="android:textColorHint">@color/login_muted</item>
+        <item name="colorControlActivated">@color/login_cyan</item>
+    </style>
+</resources>

@@ -35,5 +35,15 @@ class TokenAuthenticator(private val session: SessionManager): Authenticator {
 }
 fun createApi(session: SessionManager): Api = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
  .client(OkHttpClient.Builder().addInterceptor(AuthInterceptor(session)).authenticator(TokenAuthenticator(session))
+ .addInterceptor { chain ->
+  val invoice=chain.request().method=="POST" && chain.request().url.encodedPath=="/api/mobile/v1/facturas/"
+  if(invoice && BuildConfig.DEBUG) android.util.Log.d("InvoiceSubmission","transport POST start")
+  try { chain.proceed(chain.request()).also { response ->
+   if(invoice && BuildConfig.DEBUG) android.util.Log.d("InvoiceSubmission","transport HTTP=${response.code} body=${response.body!=null}")
+  } } catch(e: java.io.IOException) {
+   if(invoice && BuildConfig.DEBUG) android.util.Log.d("InvoiceSubmission","transport exception=${e.javaClass.simpleName}")
+   throw e
+  }
+ }
  .retryOnConnectionFailure(false).connectTimeout(20,TimeUnit.SECONDS).readTimeout(35,TimeUnit.SECONDS).callTimeout(60,TimeUnit.SECONDS).build())
  .addConverterFactory(GsonConverterFactory.create()).build().create(Api::class.java)
