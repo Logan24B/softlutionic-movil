@@ -15,6 +15,14 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
  private val graph=AppGraph.get(application)
  private val session = graph.session
  private val repository = graph.repository
+ private val analysisStore: com.softlutionic.mobile.ui.analysis.AnalysisStore = com.softlutionic.mobile.ui.analysis.AnalysisStore(viewModelScope) { filters ->
+  try { repository.currentIdentity.filterNotNull().first(); repository.analytics(filters) }
+  catch (e: retrofit2.HttpException) { if (e.code() == 401) logout(); throw e }
+ }
+ val analysisState = analysisStore.state
+ fun loadAnalysis(filters: AnalyticsFilters = analysisState.value.filters) = analysisStore.load(filters)
+ fun openAnalysis() { if (!analysisState.value.loaded && !analysisState.value.loading) loadAnalysis() }
+ init { viewModelScope.launch { session.authenticated.collect { if (!it) analysisStore.clear() } } }
  private val selected = MutableStateFlow("")
  val period = MutableStateFlow<Pair<String,String>?>(null)
  val dashboardAllowed = MutableStateFlow(false)
@@ -527,5 +535,5 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
    } finally { mutation?.value=false; finished() }
   }
  }
- fun logout() = runTask { clearClientPresentation(); repository.logout(); modules.value=emptyList(); dashboardAllowed.value=false; period.value=null; selected.value="" }
+ fun logout() = runTask { analysisStore.clear(); clearClientPresentation(); repository.logout(); modules.value=emptyList(); dashboardAllowed.value=false; period.value=null; selected.value="" }
 }

@@ -7,6 +7,8 @@ data class Capability(val read: Boolean, val create: Boolean, val update: Boolea
 data class Field(val name: String, val label: String, val required: Boolean, val type: String, val relation: String?, val max_length: Int?, val read_only: Boolean = false)
 data class Module(val name: String, val permissions: Capability, val fields: List<Field>)
 interface Api {
+ @GET("api/analytics/v1/resumen-financiero/") suspend fun analyticsSummary(@Query("start") start: String? = null, @Query("end") end: String? = null): JsonObject
+ @GET("api/analytics/v1/ranking-servicios/") suspend fun analyticsServices(@Query("start") start: String? = null, @Query("end") end: String? = null): JsonObject
  @POST("api/mobile/v1/push/devices/") suspend fun registerPush(@Body body: JsonObject): JsonObject
  @POST("api/mobile/v1/push/devices/unregister/") suspend fun unregisterPush(@Body body: JsonObject): retrofit2.Response<Unit>
  @GET("api/mobile/v1/notificaciones/no-leidas/count/") suspend fun unreadNoticeCount(): JsonObject

@@ -70,8 +70,10 @@ class MainActivity: AppCompatActivity() {
  private var usersController: UsersController?=null
  private var servicesController: ServicesController?=null
  private var dashboardView: ViewDashboardBinding?=null
+ private var analysisController: com.softlutionic.mobile.ui.analysis.AnalysisController?=null
  private var analysisView: ViewAnalysisBinding?=null
  private var analysisReturnRoute: String?=null
+ private var restoredAnalysisFilters: AnalyticsFilters?=null
  private var restoreAnalysis=false
  private val analysisBack=object: androidx.activity.OnBackPressedCallback(false) {
   override fun handleOnBackPressed() { returnFromAnalysis() }
@@ -93,6 +95,9 @@ class MainActivity: AppCompatActivity() {
   super.onCreate(savedInstanceState)
   restoreAnalysis=savedInstanceState?.getBoolean("analysis_open")==true
   analysisReturnRoute=savedInstanceState?.getString("analysis_return")
+  if(restoreAnalysis) restoredAnalysisFilters=runCatching {
+   AnalyticsFilters(savedInstanceState?.getString("analysis_start"),savedInstanceState?.getString("analysis_end"))
+  }.getOrNull()
   binding=ActivityMainBinding.inflate(layoutInflater); setContentView(binding.root)
   vm=ViewModelProvider(this)[MainViewModel::class.java]
   onBackPressedDispatcher.addCallback(this,analysisBack)
@@ -110,6 +115,7 @@ class MainActivity: AppCompatActivity() {
   lifecycleScope.launch { repeatOnLifecycle(Lifecycle.State.STARTED) {
    launch { vm.authenticated.collect { if(it) { showRecords(); vm.start() } else { com.softlutionic.mobile.notifications.DeviceNotices.clear(this@MainActivity); showLogin() } } }
    launch { vm.busy.collect { binding.progress.visibility=if(it) View.VISIBLE else View.GONE; loginView?.login?.isEnabled=!it; loginView?.login?.setText(if(it) R.string.login_loading else R.string.login_action); recordsView?.create?.isEnabled=!it; recordsView?.refresh?.isEnabled=!it; clientsController?.busyChanged(); servicesController?.busyChanged(); usersController?.busyChanged(); contractsController?.busyChanged(); contractTypesController?.busyChanged(); invoicesController?.stateChanged(); paymentsController?.stateChanged(); consultationController?.stateChanged(); contactController?.stateChanged(); binding.toolbar.menu.findItem(1)?.isEnabled=!it; updateSyncStatus() } }
+   launch { vm.analysisState.collect { analysisController?.render(it) } }
    launch { vm.contactQuery.collect { contactController?.stateChanged() } }
    launch { vm.contactUiState.collect { contactController?.stateChanged() } }
    launch { vm.clientFilters.collect { clientsController?.renderList() } }
@@ -169,7 +175,7 @@ class MainActivity: AppCompatActivity() {
   usersController?.dispose(); usersController=null
   servicesController?.dispose(); servicesController=null
   clientsController?.dispose(); clientsController=null
-  recordsView=null; dashboardView=null; analysisView=null; analysisBack.isEnabled=false; dashboardRenderer=null; dashboardData=null; selected=""; binding.toolbar.visibility=View.GONE
+  recordsView=null; dashboardView=null; analysisController=null; analysisView=null; analysisBack.isEnabled=false; dashboardRenderer=null; dashboardData=null; selected=""; binding.toolbar.visibility=View.GONE
   val login=ViewLoginBinding.inflate(layoutInflater,binding.content,false)
   // Frame the original symbol without changing or resampling the brand asset.
   login.loginLogo.doOnLayout { image ->
@@ -211,6 +217,8 @@ class MainActivity: AppCompatActivity() {
  override fun onSaveInstanceState(outState: Bundle) {
   outState.putBoolean("analysis_open",selected=="analisis")
   outState.putString("analysis_return",analysisReturnRoute)
+  outState.putString("analysis_start",vm.analysisState.value.filters.start)
+  outState.putString("analysis_end",vm.analysisState.value.filters.end)
   super.onSaveInstanceState(outState)
  }
  private fun moduleLabel(name: String): String {
@@ -275,12 +283,17 @@ class MainActivity: AppCompatActivity() {
   usersController?.dispose(); usersController=null
   servicesController?.dispose(); servicesController=null
   clientsController?.dispose(); clientsController=null
-  recordsView=null; dashboardView=null; analysisView=null; dashboardRenderer=null; dashboardData=null
+  recordsView=null; dashboardView=null; analysisController=null; analysisView=null; dashboardRenderer=null; dashboardData=null
   binding.content.removeAllViews()
   if(name=="analisis") {
    val view=ViewAnalysisBinding.inflate(layoutInflater,binding.content,false)
    analysisView=view
-   com.softlutionic.mobile.ui.analysis.AnalysisController(view,::returnFromAnalysis)
+   analysisController=com.softlutionic.mobile.ui.analysis.AnalysisController(this,view,{ vm.loadAnalysis(it) },::returnFromAnalysis)
+   analysisController?.render(vm.analysisState.value)
+   val restored=restoredAnalysisFilters
+   restoredAnalysisFilters=null
+   if(restored!=null && !vm.analysisState.value.loaded && !vm.analysisState.value.loading) vm.loadAnalysis(restored)
+   else vm.openAnalysis()
    binding.content.addView(view.root)
   } else if(name=="dashboard") {
    val view=ViewDashboardBinding.inflate(layoutInflater,binding.content,false)

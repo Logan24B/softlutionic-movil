@@ -1,18 +1,35 @@
 <resources>
  <string name="module_analysis">Análisis</string>
  <string name="analysis_title">ANÁLISIS</string>
- <string name="analysis_subtitle">Indicadores y análisis para la toma de decisiones.</string>
- <string name="analysis_development">EN DESARROLLO</string>
- <string name="analysis_description">Este módulo integrará la información consolidada del Data Warehouse de Softlutionic para presentar indicadores, tendencias y comparativos gerenciales.</string>
- <string name="analysis_next_phase">La integración con DW_Sofactur y la API analítica se encuentra prevista para una siguiente fase de desarrollo.</string>
- <string name="analysis_indicators">INDICADORES PREVISTOS</string>
- <string name="analysis_soon">PRÓXIMAMENTE</string>
- <string name="analysis_future">Resumen ejecutivo · Tendencias temporales · Ranking de servicios · Ranking de clientes · Cobranza · Mora · Satisfacción · Esperado vs. satisfacción.</string>
+ <string name="analysis_subtitle">Facturación consolidada del Data Warehouse. Importes sin símbolo: la API no informa moneda.</string>
  <string name="analysis_back">Volver</string>
- <string-array name="analysis_indicator_titles">
-  <item>FACTURACIÓN</item><item>RECAUDACIÓN</item><item>SALDO PENDIENTE</item><item>MORA</item><item>VENTAS</item><item>SERVICIOS</item><item>CLIENTES</item><item>TENDENCIAS</item><item>SATISFACCIÓN</item>
- </string-array>
- <string-array name="analysis_indicator_descriptions">
-  <item>Evolución de los ingresos facturados.</item><item>Comparación entre facturación y pagos recibidos.</item><item>Seguimiento de la cartera pendiente.</item><item>Análisis de atrasos y comportamiento de pago.</item><item>Comportamiento comercial por periodo.</item><item>Rendimiento y participación por servicio.</item><item>Segmentación y comportamiento de clientes.</item><item>Análisis por día, mes, trimestre y año.</item><item>Comparativo futuro entre desempeño y percepción del cliente.</item>
- </string-array>
+ <string name="analysis_start">Desde (AAAA-MM-DD)</string>
+ <string name="analysis_end">Hasta (AAAA-MM-DD)</string>
+ <string name="analysis_period">Fecha de emisión · %1$s</string>
+ <string name="analysis_all">Todo el historial</string>
+ <string name="analysis_open_start">Inicio</string>
+ <string name="analysis_open_end">Actualidad y fechas posteriores</string>
+ <string name="analysis_invalid_dates">Revisa las fechas ISO; Desde debe ser anterior o igual a Hasta.</string>
+ <string name="analysis_loading">Consultando indicadores…</string>
+ <string name="analysis_empty">Sin servicios facturados para este período.</string>
+ <string name="analysis_zero">Los cuatro indicadores son cero para este período.</string>
+ <string name="analysis_restricted">Acceso restringido. Tu usuario no tiene permiso para consultar estos indicadores.</string>
+ <string name="analysis_session">La sesión no es válida. Inicia sesión nuevamente.</string>
+ <string name="analysis_unavailable">El servicio analítico no está disponible temporalmente. Intenta más tarde.</string>
+ <string name="analysis_network">No se pudo conectar. Comprueba tu conexión e intenta nuevamente.</string>
+ <string name="analysis_contract">No se pudieron interpretar los indicadores. Intenta nuevamente.</string>
+ <string name="analysis_retry_after">Espera al menos %1$d segundos antes de reintentar.</string>
+ <string name="analysis_total">Facturación total</string>
+ <string name="analysis_paid">Monto de facturas pagadas</string>
+ <string name="analysis_pending">Facturación pendiente</string>
+ <string name="analysis_overdue">Facturación vencida</string>
+ <string name="analysis_comparison">Facturación por estado</string>
+ <string name="analysis_ranking">Servicios con mayor facturación</string>
+ <string name="analysis_note">Pagadas representa facturación en ese estado, no flujo de caja. El ranking mide facturación, no rentabilidad. Los estados mostrados pueden no abarcar el total.</string>
+ <string name="analysis_no_name">Servicio sin nombre</string>
+ <string name="analysis_rank_row">%1$d. %2$s · %3$s</string>
+ <string name="analysis_more">Ver todos los servicios (%1$d)</string>
+ <string name="analysis_less">Mostrar los primeros cinco</string>
+ <string name="analysis_negative">Los importes negativos se indican en las etiquetas; no se representan como barras positivas.</string>
+ <string name="analysis_date_format">AAAA-MM-DD</string>
 </resources>

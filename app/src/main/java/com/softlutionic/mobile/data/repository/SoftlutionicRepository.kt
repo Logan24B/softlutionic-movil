@@ -3,12 +3,22 @@ import com.google.gson.*
 import com.softlutionic.mobile.data.local.*
 import com.softlutionic.mobile.data.remote.*
 import com.softlutionic.mobile.data.SessionManager
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import com.softlutionic.mobile.domain.auth.*
 class SoftlutionicRepository(private val api: Api, private val session: SessionManager, private val dao: CacheDao) {
+ suspend fun analytics(filters: AnalyticsFilters): AnalyticsData = kotlinx.coroutines.coroutineScope {
+  val actor = currentIdentity.value
+  check(session.access != null && actor != null) { "Session unavailable" }
+  val summary = async { api.analyticsSummary(filters.start, filters.end) }
+  val ranking = async { api.analyticsServices(filters.start, filters.end) }
+  val result = AnalyticsDto.parse(summary.await(), ranking.await(), filters)
+  check(currentIdentity.value == actor && session.access != null) { "Session changed" }
+  result
+ }
  suspend fun registerPush(token: String) {
   check(session.access!=null) { "Inicia sesión nuevamente." }
   val actor=currentIdentity.value ?: error("La identidad todavía no está disponible.")
